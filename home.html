@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+        .main nav img {
+            width: 300px;
+            height: 70px;
+            display: flex;
+            
+        }
+        .main nav {
+            width: 100%;
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            box-shadow: 0.2rem 0.2rem 0.3rem black;
+            position: fixed;
+            top: 0;
+        }
+        .main nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .main nav ul li {
+            display: inline;
+        }
+        .main nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .main nav ul li a:hover {
+            color: rgb(39, 89, 182);
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('uu.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        body, html {
+            height: 100%;
+            overflow-x: hidden;
+        }
+        .main {
+            position: relative;
+            z-index: 1000;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 100px auto; /* Adjusted for fixed nav */
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0.2rem 0.2rem 0.3rem black;
+        }
+        h1{
+            
+            color:rgb(39, 89, 182);
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.4;
+            color: #333;
+            margin: 10px ;
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+       .image-gallery img:hover{
+           transform: scale(1.5);
+           transition: transform 0.3s;
+           z-index: 1;
+           box-shadow: 0.1rem 0.1rem 0.2rem black;
+       }
+       hr {
+            height: 3px;
+            border: none;
+            background: rgb(9, 73, 138);
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .main nav img {
+                width: 200px;
+                height: 50px;
+            }
+            .container {
+                margin: 80px auto; /* Adjusted for fixed nav */
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .main nav img {
+                width: 150px;
+                height: 40px;
+            }
+            .container {
+                margin: 60px auto; /* Adjusted for fixed nav */
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.2rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+        }
+        footer {
+            text-align: center;
+            background-color: #aad3fd;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0.2rem 0.2rem 0.3rem black;
+        }
+        footer p {
+            margin: 5px 0;
+            color: #151515;
+        }
+        footer a {
+            color: #151515;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        footer a:hover {
+            color: rgb(39, 89, 182);
+        }
+        footer i {
+            margin: 0 5px;
+        }
+        .enquiry-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0.2rem 0.2rem 0.3rem black;
+        }
+        .enquiry-form h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: rgb(39, 89, 182);
+        }
+        .enquiry-form .form-label {
+            font-weight: bold;
+        }
+        .enquiry-form .form-control {
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .enquiry-form .form-control:focus {
+            border-color: rgb(39, 89, 182);
+            box-shadow: 0 0 5px rgba(39, 89, 182, 0.5);
+        }
+        .enquiry-form .btn {
+            background-color: rgb(39, 89, 182);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .enquiry-form .btn:hover {
+            background-color: rgb(29, 69, 152);
+        }
+        .enquiry-form .d-grid {
+            display: flex;
+            justify-content: center;
+        }
+        .enquiry-form .form-control, .enquiry-form .btn {
+            width: 100%;
+        }
+        .enquiry-form .form-control:focus {
+            box-shadow: none;
+        }
+        .enquiry-form .form-label {
+            color: #333;
+        }
+        .enquiry-form .form-control {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+        }
+        .enquiry-form .form-control::placeholder {
+            color: #6c757d;
+        }
+        .enquiry-form .form-control:focus {
+            border-color: rgb(39, 89, 182);
+            box-shadow: 0 0 5px rgba(39, 89, 182, 0.5);
+        }
+        .enquiry-form .form-control:disabled, .enquiry-form .form-control[readonly] {
+            background-color: #e9ecef;
+            opacity: 1;
+        }
+        .enquiry-form .form-control:disabled:focus, .enquiry-form .form-control[readonly]:focus {
+            border-color: #ced4da;
+            box-shadow: none;
+        }
+        .enquiry-form .form-control:invalid {
+            border-color: #dc3545;
+        }
+        .enquiry-form .form-control:invalid:focus {
+            border-color: #dc3545;
+            box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+        }
+        .enquiry-form .form-control:valid {
+            border-color: #28a745;
+        }
+        .enquiry-form .form-control:valid:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+        }
+        .enquiry-form .form-control:focus {
+            outline: none;
+        }
+        .enquiry-form .form-control:focus-visible {
+            outline: none;
+            box-shadow: 0 0 5px rgba(39, 89, 182, 0.5);
+        }
+        .enquiry-form .form-control:focus:not(:focus-visible) {
+            box-shadow: none;
+        }
+        .enquiry-form .form-control:focus-visible {
+            outline: 2px solid rgb(39, 89, 182);
+            outline-offset: 2px;
+        }
+        .enquiry-form .form-control:focus:not(:focus-visible) {
+            outline: none;
+        }
+        .enquiry-form input{
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .enquiry-form input:focus {
+            border-color: rgb(39, 89, 182);
+            box-shadow: 0 0 5px rgba(39, 89, 182, 0.5);
+        }
+        .enquiry-form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .enquiry-form textarea:focus {
+            border-color: rgb(39, 89, 182);
+            box-shadow: 0 0 5px rgba(39, 89, 182, 0.5);
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="main">
+        <nav>
+            <img src="logo1.png" alt="">
+            <ul>
+                <li><a href="#home"><i class="bi bi-house-fill me-2"></i>Home</a></li>
+               <li><a href="#about">About Us</a></li>
+               <li><a href="#gallery">Gallery</a></li>
+               <li><a href="#courses">Courses</a></li>
+                <li><a href="#enquiry">Enquiry</a></li>
+                <li><a href="registration.html">Registration</a></li>
+                <li><a href="ERP.html">ERP LOGIN</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container" id="about" style="scroll-behavior: smooth;">
+        <!-- About Us - The United University, Prayagraj -->
+        <h1><i class="bi bi-person-circle me-2"></i> About Us - The United University, Prayagraj</h1><hr>
+        <img src="uu.jpeg" alt="" width="60%" height="400px" justify-content="center" style="display: block; margin: 0 auto;">
+        <p>United Group established in the year 1998 with its glorious journey of 27 years in the field of education;
+             highly qualified and competent team of faculty; enormous world-class infrastructure & facilities most conducive to academic pursuit
+              along with its remarkably successful campus placements, proudly shares the launch of its revolutionizing dream venture -</p>
+            <p>United University, approved by the State Government under the Private University Act! </p>
+
+            <p><strong>UNITED UNIVERSITY</strong> is a newly emerging, multidisciplinary and one of the most promising Universities set up to facilitate quality 
+            research and training with the launch of its courses across the academic spectrum spanning Arts,
+             Sciences, Commerce, Engineering, Management, Agriculture, Mass Communication etc.</p>
+
+            <p>UU is at the forefront of learning, teaching and research in various fields and envisages providing education par excellence 
+            and contributing towards empowering the nation by producing skilled professionals!
+        </p>
+        <!-- Vision, Mission & Core Values -->
+        <h1><i class="bi bi-eye-fill text-info fs-3 me-2"></i> Vision, Mission & Core Values</h1><hr>
+        <p><strong>* Vision:</strong>To established a Value based Global University having dynamic learning environment encouraging creativity and innovation,
+             research inspired experimental learning and focusing on topics that are pertinent to the development of the region, the Country and the World.
+        </p>
+        <!-- Mission -->
+        <p><strong>* Mission:</strong>
+        <ul>
+            <li>To provide a dynamic, inspiring, and varied learning environment with global exposure.</li>
+            <li>To position the institution as a premier hub for research and experiential learning.</li>
+            <li>To develop into an adaptable university meeting the demands of society and business.</li>
+            <li>To incorporate Value thinking, integrity, wisdom and passion in professional for their career and life.</li>
+            <li>To foster a culture of continuous improvement and lifelong learning among students and faculty.</li>
+        </ul></p>
+
+        <!-- Core Values -->
+        <p><strong>* Core Values:</strong>
+            <p>In keeping with achieving the Vision and Mission of the University we commit ourselves to the following core values:</p>
+        <ul>
+            <li>Integrity: Upholding the highest standards of honesty and ethical conduct.</li>
+            <li>Excellence: Striving for the highest quality in education, research, and community service.</li>
+            <li>Innovation: Encouraging creativity and new ideas to solve real-world problems.</li>
+            <li>Inclusivity: Fostering a diverse and inclusive environment for all students and staff.</li>
+            <li>Collaboration: Building partnerships with industry, government, and communities to enhance learning and research.</li>
+        </ul>
+        </p><hr>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="container" id="gallery" style="scroll-behavior: smooth;">
+        <h1><i class="bi bi-images me-2"></i> Gallery</h1><hr>
+        <div id="images" class="image-gallery"></div>
+    </div>
+
+    <div class="container" id="courses" style="scroll-behavior: smooth;">
+        <h1><i class="bi bi-book-fill"></i> Course's Offered</h1><hr>
+        <p>United University offers a wide range of undergraduate and postgraduate programs across various disciplines, including:</p>
+        <h3>Diploma Programs</h3>
+        <ul>
+            <li>Diploma in Computer Applications</li>
+            <li>Diploma in Hotel Management</li>
+            <li>Diploma in Fashion Designing</li>
+            <li>Diploma in Computer Science</li>
+            <li>Diploma in Business Management</li>
+            <li>Diploma in Graphic Designing</li>
+        </ul>
+        <h3>Undergraduate Programs (UG)</h3>
+        <ul>
+            <li>Bachelor of Arts (BA)</li>
+            <li>Bachelor of Science (BSc)</li>
+            <li>Bachelor of Commerce (BCom)</li>
+            <li>Bachelor of Business Administration (BBA)</li>
+            <li>Bachelor of Law (LLB)</li>
+            <li>Bachelor of Computer Applications (BCA)</li>
+            <li>Bachelor of Computer Applications (IBM)</li>
+            <li>Bachelor of Technology (BTech)</li>
+            <li>Bachelor of Hotel Management (BHM)</li>
+            <li>Bachelor of Arts in Journalism and Mass Communication (BAJMC)</li>
+        </ul>
+        <h3>Postgraduate Programs (PG)</h3>
+        <ul>
+            <li>Master of Computer Applications (MCA)</li>
+            <li>Master of Business Administration (MBA)</li>
+            <li>Master of Technology (MTech)</li>
+            <li>Master of Commerce (MCom)</li>
+            <li>Master of Law (LLM)</li>
+            <li>Master of Arts (MA)</li>
+            <li>Master of Science (MSc)</li>
+            <li>Master of Journalism and Mass Communication (MJMC)</li>
+            <li>PhD Programs in various fields</li>
+        </ul>
+    </div>
+    <!-- Enquiry Form -->
+    
+    <div class="enquiry-form" id="enquiry" style="scroll-behavior: smooth;">
+      <h3 class="text-center mb-4">Enquiry Form</h3>
+      <form id="myForm">
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="message" class="form-label">Your Message</label>
+          <textarea class="form-control" id="message" rows="4" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+        </div>
+      </form>
+    </div>
+  
+    
+    <!-- Footer Section -->
+    <footer>
+        <p>© 2023 United University. All rights reserved.</p>
+        <p>📞 1800-121-8797, 📧<a href="mailto:contact@uniteduniversity.edu.in">contact@uniteduniversity.edu.in</a></p>
+        <p>Follow us on:
+            <a href="https://www.facebook.com/UnitedUniversity.edu" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com/UnitedUniversity" target="_blank"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.instagram.com/united_university" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/united-university-allahabad" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.youtube.com/@uniteduniversityprayagraj4325" target="_blank"><i class="bi bi-youtube"></i></a>
+        </p><hr>
+    </footer>
+    <script>
+        const imageList = [
+            "C:/Users/kingr/OneDrive/Desktop/ERP/uu.jpeg",
+            "C:/Users/kingr/OneDrive/Desktop/ERP/uu1.jpeg",
+            "C:/Users/kingr/OneDrive/Desktop/ERP/uu2.jpeg",
+            "C:/Users/kingr/OneDrive/Desktop/ERP/uu3.jpeg",
+            "C:/Users/kingr/OneDrive/Desktop/ERP/uu4.jpeg",
+            "C:/Users/kingr/OneDrive/Desktop/ERP/uu5.jpeg",
+            "C:/Users/kingr/OneDrive/Desktop/ERP/uu6.jpeg",
+            "C:/Users/kingr/OneDrive/Desktop/ERP/uu7.jpeg",
+            "C:/Users/kingr/OneDrive/Desktop/ERP/uu8.jpeg",
+            "C:/Users/kingr/OneDrive/Desktop/ERP/uu9.jpeg",
+            "C:/Users/kingr/OneDrive/Desktop/ERP/uu10.jpeg",
+            "C:/Users/kingr/OneDrive/Desktop/ERP/uu11.jpeg",
+        ];
+
+        const imagesContainer = document.getElementById("images");
+
+        imageList.forEach(image => {
+            const img = document.createElement("img");
+            img.src = image;
+            img.alt = "Image Gallery";
+            img.style.width = "200px";
+            img.style.height = "200px";
+            img.style.border = "2px solid #ccc";
+            img.style.borderRadius = "5px";
+            img.style.margin = "10px";
+            imagesContainer.appendChild(img);
+        });
+
+        // Smooth scroll to top on clicking the main container
+        // Enqiury submission 
+         document.getElementById("myForm").addEventListener("submit", function(e) {
+        e.preventDefault(); // Stop default form behavior
+
+        const name = document.getElementById("name").value;
+        localStorage.setItem("submittedName", name); // Store in localStorage
+
+        window.location.href = "response.html"; // Redirect to success page
+    });
+    </script>
+
+
+</body>
+</html>

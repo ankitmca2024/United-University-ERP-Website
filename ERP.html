@@ -1,0 +1,303 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ERP Application</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+    background-image: url('uu.jpeg');
+    background-size:cover;
+    background-position: center;  
+    background-repeat: no-repeat;   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 10px;
+}
+.first {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    
+    text-align: center;
+    animation: slideLeft 1s ease-out forwards;
+    transform: translateX(-100%);
+}
+@keyframes slideLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+.input-box {
+  position: relative;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+}
+
+.input-box i {
+  position: absolute;
+  left: 10px;
+  color: #666;
+}
+
+.input-box input,
+.input-box select {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.second {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    
+    text-align: center;
+    animation: slideRight 1s ease-out forwards;
+    transform: translateX(100%);
+
+}
+@keyframes slideRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+.second img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.forgot-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkred;
+    color: white;
+    cursor: pointer;
+}
+.forgot-btn:hover {
+    background-color: rgb(161, 6, 6);
+}
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.sign-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkgreen;
+    color: white;
+    cursor: pointer;
+}
+.sign-btn:hover {
+    background-color: rgb(13, 134, 13);
+}
+.new-btn2{
+    padding: 5px 10px;
+    border: none;
+    background-color: deepskyblue;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.new-btn2:hover {
+    background-color: rgb(0, 153, 255);
+}
+.button {
+    text-align: center;
+    margin-top: 20px;
+}
+.button a{
+    border: none;
+    cursor: pointer;
+    background-color: darkred;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+button:hover{
+    background-color: rgb(161, 6, 6);
+}
+.captcha-box {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin: 15px 0;
+    
+}  
+.captcha {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+} 
+.refresh {
+    cursor: pointer;
+    color: #007bff;
+    font-size: 16px;
+    margin-left: 10px;
+}
+.refresh:hover{
+    color: #0056b3;
+}
+.goto-home {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.goto-home ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+.goto-home ul li {
+    display: inline;
+}
+.goto-home ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.goto-home ul li a i {
+    margin-right: 5px;
+    color: #007bff;
+}
+.goto-home ul li a:hover {
+    color: #0056b3;
+}
+.goto-home ul li a:hover i {
+    color: #0056b3;
+}
+.goto-home ul li a:hover {
+    text-decoration: underline;
+}
+.goto-home ul li a:hover i {
+    color: #0056b3;
+}
+</style>
+</head>
+<body>
+     <div class="goto-home">
+     <ul>
+         <li><a href="home.html"><i class="bi bi-house-fill me-2"></i>Back Home</a></li>
+     </ul>
+    </div>
+<div class="main">
+    
+    <div class="logo">
+    <img src="logo1.png" alt="">
+    </div>
+
+    <div class="container">
+    <div class="first">
+        <h1>Welcome to UNITED UNIVERSITY-Live</h1>
+        <p>UNITED UNIVERSITY is a newly merging, multidisciplinary and one of the most promising Universities
+            set up to facilitate quality research and training with the launch of its courses across the academic
+            spectrum spanning Arts, Science, Commerce, Management, Law, Engineering, Agriculture and Mass Communication etc.
+        </p>
+        <p>UNITED UNIVERSITY is a place where students can learn, grow, and achieve their dreams. Our ERP application
+            is designed to help you manage your academic journey efficiently.
+        </p>
+        <p>For More Details</p><hr>
+        
+        <div class="button">
+            <a href="home.html">Click Here</a>
+            <p>For any support queries please contact our support team.</p>
+        </div><hr>
+
+        <p>📞 1800-121-8797, 📧<a href="mailto:contact@uniteduniversity.edu.in">contact@uniteduniversity.edu.in</a></p>
+
+    </div>
+    <div class="second">
+        <img src="iCampus_Logo.png" ><hr>
+        <div class="input-box">
+            <i class="fas fa-university"></i>
+            <select>
+             <option>Select College</option>
+                <option>United Institue of Medical Science</option>
+                <option>United University</option>
+            </select>
+        </div>
+
+        <div class="input-box">
+         <i class="fas fa-user"></i>
+            <input type="text" placeholder="Student ID No.">
+        </div>
+
+        <div class="input-box">
+         <i class="fas fa-lock"></i>
+         <input type="password" placeholder="Password">
+        </div>
+
+        <div class="captcha-box">
+            <div id="captcha" class="captcha">AB12X</div>
+            <div class="refresh" onclick="generateCaptcha()">🔄 Refresh</div>
+        </div>
+
+        <div class="input-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Enter Above Code">
+        </div>
+
+       <div class="btn">
+           <button class="forgot-btn" href="#">Forgot Password?</button>
+           <button class="sign-btn" href="#">Sign In</button>
+       </div><br>
+
+        <div class="btn2">
+            <button class="new-btn2" href="#">New User? Create Password</button>
+        </div>
+
+     </div>
+    </div>
+</div>
+
+<script>
+    function generateCaptcha() {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      let captcha = '';
+      for (let i = 0; i < 6; i++) {
+        captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      document.getElementById('captcha').innerText = captcha;
+    }
+
+    // Generate initial captcha on load
+    window.onload = generateCaptcha;
+  </script>
+</body>
+</html>
